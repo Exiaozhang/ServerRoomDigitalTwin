@@ -1,0 +1,4 @@
+﻿{"Id":10001,"Name":"一号机架","Position":1}
+{"Id":10002,"Name":"二号机架","Position":2}
+{"Id":10003,"Name":"三号机架","Position":3}
+{"Id":10004,"Name":"四号机架","Position":4}

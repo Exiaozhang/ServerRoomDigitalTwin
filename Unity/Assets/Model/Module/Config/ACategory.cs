@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace ETModel
 {
@@ -13,7 +14,7 @@ namespace ETModel
 	}
 
 	/// <summary>
-	/// 管理该所有的配置
+	/// 管理该类型的所有配置
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	public abstract class ACategory<T> : ACategory where T : IConfig
@@ -23,7 +24,8 @@ namespace ETModel
 		public override void BeginInit()
 		{
 			this.dict = new Dictionary<long, IConfig>();
-
+			
+			//根据类型名称找到Config预制体，上引用的文本资源
 			string configStr = ConfigHelper.GetText(typeof(T).Name);
 
 			foreach (string str in configStr.Split(new[] { "\n" }, StringSplitOptions.None))
@@ -35,7 +37,10 @@ namespace ETModel
 					{
 						continue;
 					}
+					//把json文本资源序列化成类
 					T t = ConfigHelper.ToObject<T>(str2);
+
+					//将配置放到字典中方便查找
 					this.dict.Add(t.Id, t);
 				}
 				catch (Exception e)
