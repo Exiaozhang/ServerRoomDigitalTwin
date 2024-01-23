@@ -9,6 +9,7 @@ namespace ETModel
         public const String HoverOnServer = "HoverOnServer";
 
         public const String CancaleHoverOnServer = "CancaleHoverOnServer";
-        
+
+        public const String SwitchServrRackScene = "SwitchServrRackScene";
     }
 }

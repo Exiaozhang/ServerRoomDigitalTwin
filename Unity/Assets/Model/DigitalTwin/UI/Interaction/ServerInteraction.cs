@@ -21,6 +21,7 @@ namespace ETModel
         public override void OnPointerClick(PointerEventData eventData)
         {
             base.OnPointerClick(eventData);
+            Game.EventSystem.Run(UIEventType.SwitchServrRackScene);
         }
     }
 }

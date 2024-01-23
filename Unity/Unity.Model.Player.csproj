@@ -143,6 +143,7 @@
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\CancleHoverOnServer.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\DigitTwinInitSceneStart.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\HoverOnServer.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Event\SwitchServrRackScene.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\UIEventType.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Factory\LobbyFactory.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Factory\TooltipFactory.cs" />
