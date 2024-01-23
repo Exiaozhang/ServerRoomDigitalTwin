@@ -24,6 +24,7 @@ namespace ETModel
         /// <param name="position">位置</param>
         public void Add(GameObject obj, Int32 position)
         {
+            
             if (obj == null)
                 return;
             ReferenceCollector referenceCollector = this.GameObject.GetComponent<ReferenceCollector>();

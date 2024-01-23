@@ -140,8 +140,15 @@
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRoomSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerSystem.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Event\CancleHoverOnServer.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\DigitTwinInitSceneStart.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Event\HoverOnServer.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\UIEventType.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Factory\LobbyFactory.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Factory\TooltipFactory.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\DigitialObjectInteraction.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\ServerInteraction.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\UIType.cs" />
     <Compile Include="Assets\Model\Entity\Game.cs" />
     <Compile Include="Assets\Model\Entity\Hotfix.cs" />
     <Compile Include="Assets\Model\Entity\Scene.cs" />

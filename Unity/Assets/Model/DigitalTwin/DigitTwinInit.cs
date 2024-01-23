@@ -47,7 +47,7 @@ namespace ETModel
 
                 Game.Hotfix.GotoHotfix();
                 
-                
+                //TODO 本项目的UI应该由雷火UX创建
 
                 //创建初始化场景(UI和Map)
                 Game.EventSystem.Run(UIEventType.DigitTwinInitSceneStart);

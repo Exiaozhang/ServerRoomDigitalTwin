@@ -66,7 +66,6 @@ namespace ETModel
                 //设置canvas
                 string cavasName = ui.GameObject.GetComponent<CanvasConfig>().CanvasName;
                 ui.GameObject.transform.SetParent(this.Root.Get<GameObject>(cavasName).transform, false);
-                
 
                 return ui;
             }

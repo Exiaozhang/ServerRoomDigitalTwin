@@ -1,4 +1,5 @@
 using System;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace ETModel
@@ -15,6 +16,8 @@ namespace ETModel
 
         public Int32 Position { get; set; }
 
+        public ServerInteraction Interaction { get; set; }
+
         public void Awake(Int32 id, Int32 position)
         {
             //加载预制体资源
@@ -24,6 +27,9 @@ namespace ETModel
             Temperature = 0;
             this.Id = id;
             this.Position = position;
+
+            ServerInteraction serverInteraction = this.GameObject.AddComponent<ServerInteraction>();
+            serverInteraction.server = this;
         }
     }
 }
