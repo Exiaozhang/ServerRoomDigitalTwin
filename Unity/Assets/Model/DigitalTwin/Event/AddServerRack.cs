@@ -7,13 +7,17 @@ namespace ETModel.Event
     /// Para Int32:机架的ID Int32:机架的Position 
     /// </summary>
     [Event(EventType.AddServerRack)]
-    public class AddServerRack: AEvent<Int32, Int32>
+    public class AddServerRack: AEvent<ServerRackConfig>
     {
-        public override void Run(int id, int position)
+        public override void Run(ServerRackConfig serverRackConfig)
         {
             ServerRackComponent serverRackComponent = ServerRoom.Instance.GetComponent<ServerRackComponent>();
-            ServerRack serverRack = serverRackComponent.AddServerRack(id, position);
+            ServerRack serverRack = serverRackComponent.AddServerRack(serverRackConfig);
             ServerRoom.Instance.Add(serverRack.GameObject, serverRack.Position);
+
+            //给ServerRack添加交互组件
+            ServerRackInteraction serverRackInteraction = serverRack.GameObject.AddComponent<ServerRackInteraction>();
+            serverRackInteraction.serverRack = serverRack;
         }
     }
 }

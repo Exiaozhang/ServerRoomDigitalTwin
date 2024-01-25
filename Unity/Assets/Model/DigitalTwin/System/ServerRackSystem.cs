@@ -4,11 +4,11 @@ using UnityEngine;
 namespace ETModel
 {
     [ObjectSystem]
-    public class ServerRackSystem: AwakeSystem<ServerRack, GameObject, Int32, Int32>
+    public class ServerRackSystem: AwakeSystem<ServerRack, GameObject, ServerRackConfig>
     {
-        public override void Awake(ServerRack self, GameObject a, Int32 id, Int32 position)
+        public override void Awake(ServerRack self, GameObject a, ServerRackConfig serverRackConfig)
         {
-            self.Awake(a, id, position);
+            self.Awake(a, serverRackConfig);
         }
     }
 }

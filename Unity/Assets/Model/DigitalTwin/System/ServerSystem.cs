@@ -1,13 +1,14 @@
 using System;
+using UnityEngine;
 
 namespace ETModel
 {
     [ObjectSystem]
-    public class ServerAwakeSystem: AwakeSystem<Server, Int32, Int32>
+    public class ServerAwakeSystem: AwakeSystem<Server, GameObject, ServerConfig>
     {
-        public override void Awake(Server self, Int32 id, Int32 position)
+        public override void Awake(Server self, GameObject serverObj, ServerConfig serverConfig)
         {
-            self.Awake(id, position);
+            self.Awake(serverObj, serverConfig);
         }
     }
 }

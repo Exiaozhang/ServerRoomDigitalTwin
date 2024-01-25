@@ -22,11 +22,18 @@ namespace ETModel
         /// <param name="id">机架的id</param>
         /// <param name="position">机架的position</param>
         /// <returns></returns>
-        public ServerRack AddServerRack(Int32 id, Int32 position)
+        public ServerRack AddServerRack(Int32 id, Int32 position, String name)
+        {
+            ServerRackConfig serverRackConfig = new ServerRackConfig() { Id = id, Position = position, Name = name };
+            return AddServerRack(serverRackConfig);
+        }
+
+        public ServerRack AddServerRack(ServerRackConfig serverRackConfig)
         {
             GameObject serverRackObj = Resources.Load<GameObject>("DigitTwin/ServerRack");
-            ServerRack serverRack = ComponentFactory.CreateWithParent<ServerRack, GameObject, Int32, Int32>(this, serverRackObj, id, position);
-            serverRacks.Add(id, serverRack);
+            ServerRack serverRack =
+                    ComponentFactory.CreateWithParent<ServerRack, GameObject, ServerRackConfig>(this, serverRackObj, serverRackConfig);
+            serverRacks.Add(serverRack.Id, serverRack);
             return serverRack;
         }
 

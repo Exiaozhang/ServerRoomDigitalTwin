@@ -27,7 +27,8 @@ namespace ETModel
             foreach (var config in serverRackConfigs)
             {
                 var serverRackConfig = (ServerRackConfig)config;
-                Game.EventSystem.Run(EventType.AddServerRack, serverRackConfig.Id, serverRackConfig.Position);
+                //发布事件添加机架
+                Game.EventSystem.Run(EventType.AddServerRack, serverRackConfig);
             }
 
             //接收服务器传来的Server配置信息(这里先用AssetBundleConfig代替)
@@ -37,7 +38,7 @@ namespace ETModel
             foreach (IConfig config in serverConfigs)
             {
                 var serverConfig = (ServerConfig)config;
-                Game.EventSystem.Run(EventType.AddServer, serverConfig.Id, serverConfig.RackId, serverConfig.Position);
+                Game.EventSystem.Run(EventType.AddServer, serverConfig);
             }
         }
     }

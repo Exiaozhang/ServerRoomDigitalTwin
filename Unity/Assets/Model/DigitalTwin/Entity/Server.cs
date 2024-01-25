@@ -16,20 +16,27 @@ namespace ETModel
 
         public Int32 Position { get; set; }
 
+        public String Name { get; set; }
+
+        /// <summary>
+        /// 服务器所属的机架Id
+        /// </summary>
+        public Int32 RackId { get; set; }
+
         public ServerInteraction Interaction { get; set; }
 
-        public void Awake(Int32 id, Int32 position)
+        public void Awake(GameObject gameObject, ServerConfig serverConfig)
         {
-            //加载预制体资源
-            GameObject serverObj = Resources.Load<GameObject>("DigitTwin/Server");
-            this.GameObject = UnityEngine.Object.Instantiate(serverObj);
+            this.GameObject = UnityEngine.Object.Instantiate(gameObject);
 
+            //初始化Server设置
             Temperature = 0;
-            this.Id = id;
-            this.Position = position;
-
-            ServerInteraction serverInteraction = this.GameObject.AddComponent<ServerInteraction>();
-            serverInteraction.server = this;
+            this.Position = serverConfig.Position;
+            this.Id = serverConfig.Id;
+            this.RackId = serverConfig.RackId;
+            this.Name = serverConfig.Name;
+            this.Interaction = this.GameObject.AddComponent<ServerInteraction>();
+            Interaction.server = this;
         }
     }
 }

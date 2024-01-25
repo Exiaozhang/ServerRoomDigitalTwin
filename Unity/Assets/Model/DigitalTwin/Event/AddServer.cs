@@ -3,23 +3,19 @@
 namespace ETModel.Event
 {
     [Event(EventType.AddServer)]
-    public class AddServer: AEvent<Int32, Int32, Int32>
+    public class AddServer: AEvent<ServerConfig>
     {
-        public override void Run(int id, int rackId, int position)
+        public override void Run(ServerConfig serverConfig)
         {
             ServerRackComponent serverRackComponent = ServerRoom.Instance.GetComponent<ServerRackComponent>();
-            ServerRack serverRack = serverRackComponent.GetServerRack(rackId);
+            ServerRack serverRack = serverRackComponent.GetServerRack(serverConfig.RackId);
             if (serverRack == null)
             {
                 return;
             }
 
-            ServerComponent serverComponent = serverRack.GetComponent<ServerComponent>();
-            if (serverComponent == null)
-                serverComponent = serverRack.AddComponent<ServerComponent>();
-
-            Server addServer = serverComponent.AddServer(id, position);
-            serverRack.AddServer(addServer.GameObject, addServer.Position);
+            //添加服务器到机架上
+            serverRack.AddServer(serverConfig);
         }
     }
 }
