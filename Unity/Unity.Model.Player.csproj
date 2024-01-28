@@ -124,6 +124,7 @@
     <Compile Include="Assets\Model\DigitalTwin\Component\IpmiComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Component\ServerComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Component\ServerRackComponent.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\Component\VirtualCameraComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Config\ServerConfig.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Config\ServerRackConfig.cs" />
     <Compile Include="Assets\Model\DigitalTwin\DigitTwinInit.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRoomSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerSystem.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\System\VirtualCameraComponentSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\CancleHoverOnServer.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\DigitTwinInitSceneStart.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\HoverOnServer.cs" />
@@ -150,6 +152,7 @@
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\DigitialObjectInteraction.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\ServerInteraction.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\ServerRackInteraction.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\ServerRoomInteraction.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\UIType.cs" />
     <Compile Include="Assets\Model\Entity\Game.cs" />
     <Compile Include="Assets\Model\Entity\Hotfix.cs" />
@@ -1087,6 +1090,10 @@
     <ProjectReference Include="ILRuntime.Player.csproj">
       <Project>{a143187d-d468-3842-1074-f3577452e37d}</Project>
       <Name>ILRuntime.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Cinemachine.Player.csproj">
+      <Project>{ea02a03d-211d-20de-ec31-24d2881fdcbe}</Project>
+      <Name>Cinemachine.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{67655f18-9b1c-34a3-64d0-0f7247c6b418}</Project>

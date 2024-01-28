@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ETModel.Event
 {
@@ -13,11 +14,11 @@ namespace ETModel.Event
         {
             ServerRackComponent serverRackComponent = ServerRoom.Instance.GetComponent<ServerRackComponent>();
             ServerRack serverRack = serverRackComponent.AddServerRack(serverRackConfig);
-            ServerRoom.Instance.Add(serverRack.GameObject, serverRack.Position);
 
-            //给ServerRack添加交互组件
-            ServerRackInteraction serverRackInteraction = serverRack.GameObject.AddComponent<ServerRackInteraction>();
-            serverRackInteraction.serverRack = serverRack;
+            //给机架订阅事件，点击切换场景
+            serverRack.Interaction.onPointerClikEvent += () => { Game.EventSystem.Run(UIEventType.SwitchServrRackScene, serverRack); };
+
+            ServerRoom.Instance.Add(serverRack.GameObject, serverRack.Position);
         }
     }
 }

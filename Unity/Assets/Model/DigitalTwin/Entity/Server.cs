@@ -35,7 +35,7 @@ namespace ETModel
             this.Id = serverConfig.Id;
             this.RackId = serverConfig.RackId;
             this.Name = serverConfig.Name;
-            this.Interaction = this.GameObject.AddComponent<ServerInteraction>();
+            Interaction = this.GameObject.AddComponent<ServerInteraction>();
             Interaction.server = this;
         }
     }

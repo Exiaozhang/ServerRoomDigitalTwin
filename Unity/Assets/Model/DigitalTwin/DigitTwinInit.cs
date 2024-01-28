@@ -31,6 +31,7 @@ namespace ETModel
                 Game.Scene.AddComponent<PlayerComponent>();
                 Game.Scene.AddComponent<UnitComponent>();
                 Game.Scene.AddComponent<UIComponent>();
+                Game.Scene.AddComponent<VirtualCameraComponent>();
 
                 // 下载ab包
                 await BundleHelper.DownloadBundle();
@@ -44,6 +45,7 @@ namespace ETModel
                 Game.Scene.GetComponent<ResourcesComponent>().UnloadBundle("config.unity3d");
                 Game.Scene.AddComponent<OpcodeTypeComponent>();
                 Game.Scene.AddComponent<MessageDispatcherComponent>();
+                
 
                 Game.Hotfix.GotoHotfix();
                 

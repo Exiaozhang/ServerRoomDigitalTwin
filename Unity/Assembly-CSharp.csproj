@@ -41,6 +41,29 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\3rdPersonWithAimMode\ActivateOnKeypress.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerLookAt.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerMovement.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Anywhere Door\TagChanger.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetProperty.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetTargetController.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\DualTarget\MoveAimTarget.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\DualTarget\PointAtAimTarget.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Trigger volumes\GenericTrigger.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement2D.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovementNoCamera.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\ActivateCamOnPlay.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\ActivateCameraWithDistance.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\ExampleHelpWindow.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\InvokeEventFromInspector.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\MixingCameraBlend.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\SpawnInCircle.cs" />
+    <Compile Include="Assets\Test\TestCameraManager.cs" />
     <Compile Include="Assets\Test\TestInteration.cs" />
     <None Include="Library\PackageCache\com.unity.modules.subsystems@1.0.0\package.json" />
     <None Include="Library\PackageCache\com.unity.modules.jsonserialize@1.0.0\package.json" />
@@ -76,10 +99,12 @@
     <None Include="Library\PackageCache\nuget.mono-cecil@0.1.6-preview\package.json" />
     <None Include="Library\PackageCache\com.unity.modules.particlesystem@1.0.0\package.json" />
     <None Include="Library\PackageCache\com.unity.modules.physics2d@1.0.0\package.json" />
+    <None Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Anywhere Door\ScreenCutoutShader.shader" />
     <None Include="Library\PackageCache\com.unity.modules.vr@1.0.0\package.json" />
     <None Include="Library\PackageCache\com.unity.multiplayer-hlapi@1.0.8\ValidationExceptions.json" />
     <None Include="Assets\Res\Config\GlobalProto.txt" />
     <None Include="Library\PackageCache\com.unity.ide.visualstudio@2.0.22\ValidationExceptions.json" />
+    <None Include="Library\PackageCache\com.unity.cinemachine@2.6.17\license.txt" />
     <None Include="Library\PackageCache\com.unity.modules.wind@1.0.0\package.json" />
     <None Include="Library\PackageCache\com.unity.modules.umbra@1.0.0\package.json" />
     <None Include="Library\PackageCache\com.unity.multiplayer-hlapi@1.0.8\ValidationConfig.json" />
@@ -95,6 +120,7 @@
     <None Include="Library\PackageCache\com.unity.textmeshpro@2.1.4\Editor Resources\Shaders\TMP_SDF Internal Editor.shader" />
     <None Include="Library\PackageCache\com.unity.modules.director@1.0.0\package.json" />
     <None Include="Library\PackageCache\com.unity.modules.terrain@1.0.0\package.json" />
+    <None Include="Library\PackageCache\com.unity.cinemachine@2.6.17\package.json" />
     <None Include="Library\PackageCache\com.unity.2d.sprite@1.0.0\package.json" />
     <None Include="Library\PackageCache\com.unity.multiplayer-hlapi@1.0.8\package.json" />
     <None Include="Library\PackageCache\com.unity.modules.androidjni@1.0.0\package.json" />
@@ -668,6 +694,10 @@
       <Project>{4f63daae-f5cd-01d3-9fa4-bd9bc22dc82d}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{fe0f4466-fc68-3bfe-96b7-2ccaaefe0c97}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.ThirdParty.csproj">
       <Project>{d2ad5be1-263a-9a30-ab0f-dc5b08044350}</Project>
       <Name>Unity.ThirdParty</Name>
@@ -679,6 +709,10 @@
     <ProjectReference Include="com.unity.multiplayer-hlapi.Editor.csproj">
       <Project>{d26a6309-c8da-605d-d8fa-bdf053612226}</Project>
       <Name>com.unity.multiplayer-hlapi.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AimingRig.csproj">
+      <Project>{478838b1-30b3-fb1c-08cf-8d05ddc57628}</Project>
+      <Name>AimingRig</Name>
     </ProjectReference>
     <ProjectReference Include="ILRuntime.csproj">
       <Project>{dcac29af-c1cc-3277-751c-dd00bd5bd005}</Project>
@@ -731,6 +765,10 @@
     <ProjectReference Include="UnityEditor.SpatialTracking.csproj">
       <Project>{69dc98b1-179b-3c00-7b39-5e44f4650b62}</Project>
       <Name>UnityEditor.SpatialTracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{a9901dfa-ebb7-3afd-b6d6-cfd9d63240d4}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.SpatialTracking.csproj">
       <Project>{ab8b8a06-1a6e-a7bc-2ae4-12aa72b18f60}</Project>

@@ -41,6 +41,29 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\3rdPersonWithAimMode\ActivateOnKeypress.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerLookAt.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerMovement.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Anywhere Door\TagChanger.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetProperty.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\CameraMagnets\CameraMagnetTargetController.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\DualTarget\MoveAimTarget.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\DualTarget\PointAtAimTarget.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Scripting\ScriptingExample.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Trigger volumes\GenericTrigger.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovement2D.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Models\UnityCharacter\Scripts\CharacterMovementNoCamera.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\ActivateCamOnPlay.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\ActivateCameraWithDistance.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\ExampleHelpWindow.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\InvokeEventFromInspector.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\MixingCameraBlend.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
+    <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\SpawnInCircle.cs" />
+    <Compile Include="Assets\Test\TestCameraManager.cs" />
     <Compile Include="Assets\Test\TestInteration.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.36f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\Variations\mono\Managed\UnityEngine.dll</HintPath>
@@ -251,6 +274,9 @@
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
       <HintPath>D:\Backup\ET\Unity\Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>D:\Backup\ET\Unity\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>D:\Backup\ET\Unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
@@ -641,9 +667,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Cinemachine.Player.csproj">
+      <Project>{ea02a03d-211d-20de-ec31-24d2881fdcbe}</Project>
+      <Name>Cinemachine.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.ThirdParty.Player.csproj">
       <Project>{4610df10-c19b-9ab9-e23c-2644b8b0ab8a}</Project>
       <Name>Unity.ThirdParty.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="AimingRig.Player.csproj">
+      <Project>{7127b75e-ab65-6945-fa0e-bd2548748d26}</Project>
+      <Name>AimingRig.Player</Name>
     </ProjectReference>
     <ProjectReference Include="ILRuntime.Player.csproj">
       <Project>{a143187d-d468-3842-1074-f3577452e37d}</Project>

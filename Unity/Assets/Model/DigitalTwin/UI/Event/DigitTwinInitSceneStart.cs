@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 using EventType = ETModel.Event.EventType;
 
 namespace ETModel
@@ -40,6 +41,18 @@ namespace ETModel
                 var serverConfig = (ServerConfig)config;
                 Game.EventSystem.Run(EventType.AddServer, serverConfig);
             }
+
+            //将虚拟摄像头对准ServerRoom
+            CinemachineVirtualCamera cinemachineVirtualCamera = Game.Scene.GetComponent<VirtualCameraComponent>().GetMaxPriority();
+            cinemachineVirtualCamera.LookAt = serverRoom.GameObject.transform;
+            cinemachineVirtualCamera.Follow = serverRoom.GameObject.transform;
+            UnityEngine.Object.Destroy(cinemachineVirtualCamera.GetCinemachineComponent(CinemachineCore.Stage.Body));
+            UnityEngine.Object.Destroy(cinemachineVirtualCamera.GetCinemachineComponent(CinemachineCore.Stage.Aim));
+
+            cinemachineVirtualCamera.AddCinemachineComponent<CinemachineComposer>();
+            cinemachineVirtualCamera.transform.position = serverRoom.GameObject.transform.position + new Vector3(0, 5, -15);
+
+            serverRoom.Interaction.RotateControl(true);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 namespace ETModel
@@ -37,6 +38,17 @@ namespace ETModel
             }
 
             serverRack.Dispose();
+
+            //切换游戏摄像机视角
+            CinemachineVirtualCamera cinemachineVirtualCamera = Game.Scene.GetComponent<VirtualCameraComponent>().Current;
+
+            //Follow和LookAt ServerRack
+            cinemachineVirtualCamera.Follow = newServerRack.GameObject.transform;
+            cinemachineVirtualCamera.LookAt = newServerRack.GameObject.transform;
+
+            cinemachineVirtualCamera.transform.position = newServerRack.GameObject.transform.position + new Vector3(0, 0, -5);
+
+            newServerRack.Interaction.RotateControl(true);
         }
     }
 }

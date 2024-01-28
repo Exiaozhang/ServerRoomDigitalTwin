@@ -22,6 +22,8 @@ namespace ETModel
 
         public String Name { get; set; }
 
+        public ServerRackInteraction Interaction { get; protected set; }
+
         public void Awake(GameObject gameObj, ServerRackConfig serverRackConfig)
         {
             Temperature = 0;
@@ -29,6 +31,10 @@ namespace ETModel
             this.Id = serverRackConfig.Id;
             this.Position = serverRackConfig.Position;
             this.AddComponent<ServerComponent>();
+
+            //添加交互功能
+            this.Interaction = this.GameObject.AddComponent<ServerRackInteraction>();
+            this.Interaction.serverRack = this;
         }
 
         /// <summary>
@@ -58,7 +64,6 @@ namespace ETModel
             addServer.GameObject.transform.rotation = transform.rotation;
             addServer.GameObject.transform.parent = this.GameObject.transform;
         }
-        
         
     }
 }

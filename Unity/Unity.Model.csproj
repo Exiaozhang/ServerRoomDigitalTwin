@@ -124,6 +124,7 @@
     <Compile Include="Assets\Model\DigitalTwin\Component\IpmiComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Component\ServerComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Component\ServerRackComponent.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\Component\VirtualCameraComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Config\ServerConfig.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Config\ServerRackConfig.cs" />
     <Compile Include="Assets\Model\DigitalTwin\DigitTwinInit.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRoomSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerSystem.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\System\VirtualCameraComponentSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\CancleHoverOnServer.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\DigitTwinInitSceneStart.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\HoverOnServer.cs" />
@@ -150,6 +152,7 @@
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\DigitialObjectInteraction.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\ServerInteraction.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\ServerRackInteraction.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\ServerRoomInteraction.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\UIType.cs" />
     <Compile Include="Assets\Model\Entity\Game.cs" />
     <Compile Include="Assets\Model\Entity\Hotfix.cs" />
@@ -1121,6 +1124,10 @@
     <ProjectReference Include="ILRuntime.csproj">
       <Project>{dcac29af-c1cc-3277-751c-dd00bd5bd005}</Project>
       <Name>ILRuntime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{fe0f4466-fc68-3bfe-96b7-2ccaaefe0c97}</Project>
+      <Name>Cinemachine</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{74e1c5c0-7c72-fa9f-cd43-b55bdef754da}</Project>

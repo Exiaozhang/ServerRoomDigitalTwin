@@ -10,11 +10,15 @@ namespace ETModel
     {
         public static ServerRoom Instance { get; protected set; }
 
+        public ServerRoomInteraction Interaction { get; protected set; }
+
         public override void Awake(GameObject gameObj)
         {
             base.Awake(gameObj);
             this.AddComponent<ServerRackComponent>();
             Instance = this;
+            this.Interaction = this.GameObject.AddComponent<ServerRoomInteraction>();
+            this.Interaction.speed = 800;
         }
 
         /// <summary>
@@ -24,7 +28,6 @@ namespace ETModel
         /// <param name="position">位置</param>
         public void Add(GameObject obj, Int32 position)
         {
-            
             if (obj == null)
                 return;
             ReferenceCollector referenceCollector = this.GameObject.GetComponent<ReferenceCollector>();
