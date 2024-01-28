@@ -6,5 +6,6 @@ namespace ETModel
     {
         public const String Tooltip = "Tooltip";
         public const String Lobby = "Lobby";
+        public const String ServerRackLobby = "ServerRackLobby";
     }
 }

@@ -8,7 +8,6 @@
     {
         public override void Run(Server server)
         {
-            Log.Msg("Hello World");
             UI ui = Game.Scene.GetComponent<UIComponent>().Get(DigitialTwinUIType.Tooltip);
             if (ui == null)
             {
@@ -18,6 +17,7 @@
             }
 
             //下边应该是修改弹出Tooltip的信息
+            
         }
     }
 }

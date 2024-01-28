@@ -10,6 +10,8 @@ namespace ETModel
 
         public const String CancaleHoverOnServer = "CancaleHoverOnServer";
 
-        public const String SwitchServrRackScene = "SwitchServrRackScene";
+        public const String LobbyTOServerRackSceneLobby = "LobbyTOServerRackSceneLobby";
+
+        public const String ServerRackSceneLobbyToLobby = "ServerRackSceneLobbyToLobby";
     }
 }

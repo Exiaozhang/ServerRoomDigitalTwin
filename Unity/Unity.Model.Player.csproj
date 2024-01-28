@@ -124,6 +124,7 @@
     <Compile Include="Assets\Model\DigitalTwin\Component\IpmiComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Component\ServerComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Component\ServerRackComponent.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\Component\ServerRackLobbyComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Component\VirtualCameraComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Config\ServerConfig.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Config\ServerRackConfig.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Assets\Model\DigitalTwin\Event\EventType.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerComponentSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackComponentSystem.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\System\ServerRackLobbyComponentSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRoomSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerSystem.cs" />
@@ -145,9 +147,11 @@
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\CancleHoverOnServer.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\DigitTwinInitSceneStart.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\HoverOnServer.cs" />
-    <Compile Include="Assets\Model\DigitalTwin\UI\Event\SwitchServrRackScene.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Event\LobbyToServrRackSceneLobby.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Event\ServerRackSceneLobbyToLobby.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\UIEventType.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Factory\LobbyFactory.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Factory\ServerRackLobbyFactory.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Factory\TooltipFactory.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\DigitialObjectInteraction.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\ServerInteraction.cs" />

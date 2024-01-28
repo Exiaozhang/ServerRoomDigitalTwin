@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace ETModel
 {
-    [Event(UIEventType.SwitchServrRackScene)]
-    public class SwitchServrRackScene: AEvent<ServerRack>
+    [Event(UIEventType.LobbyTOServerRackSceneLobby)]
+    public class LobbyToServrRackSceneLobby: AEvent<ServerRack>
     {
         public override async void Run(ServerRack serverRack)
         {
@@ -49,6 +49,10 @@ namespace ETModel
             cinemachineVirtualCamera.transform.position = newServerRack.GameObject.transform.position + new Vector3(0, 0, -5);
 
             newServerRack.Interaction.RotateControl(true);
+
+            //加载机架场景中的UI
+            UI ui = ServerRackLobbyFactory.Create(DigitialTwinUIType.ServerRackLobby);
+            Game.Scene.GetComponent<UIComponent>().Add(ui);
         }
     }
 }

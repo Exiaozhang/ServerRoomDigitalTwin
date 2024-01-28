@@ -12,7 +12,7 @@ namespace ETModel
     {
         public override void Run()
         {
-            //创建加载主场景
+            //创建加载主场景大厅UI
             UI ui = LobbyFactory.Create(DigitialTwinUIType.Lobby);
             //将UI加载到Scene中的UIComponent进行管理
             Game.Scene.GetComponent<UIComponent>().Add(ui);
