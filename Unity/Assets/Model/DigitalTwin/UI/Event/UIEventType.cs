@@ -13,5 +13,7 @@ namespace ETModel
         public const String LobbyTOServerRackSceneLobby = "LobbyTOServerRackSceneLobby";
 
         public const String ServerRackSceneLobbyToLobby = "ServerRackSceneLobbyToLobby";
+
+        public const String SwitchToMainScne = "SwitchToMainScne";
     }
 }

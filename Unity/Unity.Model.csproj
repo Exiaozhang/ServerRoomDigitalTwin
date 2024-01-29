@@ -149,6 +149,7 @@
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\HoverOnServer.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\LobbyToServrRackSceneLobby.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\ServerRackSceneLobbyToLobby.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Event\SwitchToMainScene.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\UIEventType.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Factory\LobbyFactory.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Factory\ServerRackLobbyFactory.cs" />

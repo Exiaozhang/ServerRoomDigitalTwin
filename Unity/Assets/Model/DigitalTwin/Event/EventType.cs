@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ETModel.Event
+namespace ETModel
 {
     public partial class EventType
     {

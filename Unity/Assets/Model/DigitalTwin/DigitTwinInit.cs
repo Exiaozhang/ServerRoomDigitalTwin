@@ -33,6 +33,7 @@ namespace ETModel
                 Game.Scene.AddComponent<UIComponent>();
                 Game.Scene.AddComponent<VirtualCameraComponent>();
 
+
                 // 下载ab包
                 await BundleHelper.DownloadBundle();
 

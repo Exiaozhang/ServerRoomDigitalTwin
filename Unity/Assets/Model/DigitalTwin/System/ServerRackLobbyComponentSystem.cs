@@ -11,6 +11,12 @@ namespace ETModel
             ReferenceCollector referenceCollector = self.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             referenceCollector.Get<GameObject>("BackToLobbyButton").GetComponent<Button>().onClick.Add(() =>
             {
+                //清理这个场景的UI
+                UI ui = Game.Scene.GetComponent<UIComponent>().Get(DigitialTwinUIType.ServerRackLobby);
+                ui.Dispose();
+                
+
+                //切换到主场景
                 Game.EventSystem.Run(UIEventType.ServerRackSceneLobbyToLobby);
             });
         }
