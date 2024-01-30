@@ -14,6 +14,12 @@ namespace ETModel
 
         public Int32 Id { get; set; }
 
+        public override void Dispose()
+        {
+            base.Dispose();
+            Log.Msg(this.GameObject.name);
+        }
+
         public Int32 Position { get; set; }
 
         public String Name { get; set; }

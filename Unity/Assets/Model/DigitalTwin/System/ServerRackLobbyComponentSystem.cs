@@ -14,10 +14,9 @@ namespace ETModel
                 //清理这个场景的UI
                 UI ui = Game.Scene.GetComponent<UIComponent>().Get(DigitialTwinUIType.ServerRackLobby);
                 ui.Dispose();
-                
 
-                //切换到主场景
-                Game.EventSystem.Run(UIEventType.ServerRackSceneLobbyToLobby);
+                //切换到机房场景
+                Game.EventSystem.Run(UIEventType.SwitchToServerRoomScene);
             });
         }
     }

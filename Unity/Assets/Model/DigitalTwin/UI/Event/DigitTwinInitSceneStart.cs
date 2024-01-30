@@ -1,7 +1,6 @@
 ﻿using Cinemachine;
 using UnityEngine;
 
-
 namespace ETModel
 {
     /// <summary>
@@ -10,16 +9,23 @@ namespace ETModel
     [Event(UIEventType.DigitTwinInitSceneStart)]
     public class DigitTwinInitSceneStart: AEvent
     {
-        public override void Run()
+        public override async void Run()
         {
             //创建加载主场景大厅UI
             UI ui = LobbyFactory.Create(DigitialTwinUIType.Lobby);
             //将UI加载到Scene中的UIComponent进行管理
             Game.Scene.GetComponent<UIComponent>().Add(ui);
 
+            //切换到机房的场景
+            ETModel.Game.Scene.GetComponent<ResourcesComponent>().LoadBundle("serverroomscene.unity3d");
+            using (SceneChangeComponent sceneChangeComponent = ETModel.Game.Scene.AddComponent<SceneChangeComponent>())
+            {
+                await sceneChangeComponent.ChangeSceneAsync(SceneType.ServerRoomScene);
+            }
+
             //加载资源中的Room的预制体
             GameObject roomObj = Resources.Load<GameObject>("DigitTwin/Room");
-            ServerRoom serverRoom = ComponentFactory.CreateWithParent<ServerRoom, GameObject>(Game.Scene, roomObj);
+            ServerRoom serverRoom = ComponentFactory.Create<ServerRoom, GameObject>(roomObj);
 
             //接收服务器传来的ServerRack配置信息(这里先用AssetBundleConfig代替 还没有清楚需求)
             ACategory serverRackConfigCategory = Game.Scene.GetComponent<ConfigComponent>().GetCategory(typeof (ServerRackConfig));

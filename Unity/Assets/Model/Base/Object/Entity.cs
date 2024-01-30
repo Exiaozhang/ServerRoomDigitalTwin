@@ -43,7 +43,7 @@ namespace ETModel
                     Log.Error(e);
                 }
             }
-
+            
             this.components.Clear();
             this.componentDict.Clear();
         }

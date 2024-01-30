@@ -3,18 +3,18 @@ using UnityEngine;
 
 namespace ETModel
 {
-    [Event(UIEventType.SwitchToMainScne)]
-    public class SwitchToMainScene: AEvent
+    [Event(UIEventType.SwitchToServerRoomScene)]
+    public class SwitchToServerRoomScene: AEvent
     {
         public override async void Run()
         {
             // 加载场景资源
             // 加载场景会清空Gameobject
-            ETModel.Game.Scene.GetComponent<ResourcesComponent>().LoadBundle("digittwininit.unity3d");
+            ETModel.Game.Scene.GetComponent<ResourcesComponent>().LoadBundle("serverroomscene.unity3d");
 
             using (SceneChangeComponent sceneChangeComponent = ETModel.Game.Scene.AddComponent<SceneChangeComponent>())
             {
-                await sceneChangeComponent.ChangeSceneAsync(SceneType.DigitTwinInit);
+                await sceneChangeComponent.ChangeSceneAsync(SceneType.ServerRoomScene);
             }
 
             //加载资源中的Room的预制体
@@ -53,6 +53,7 @@ namespace ETModel
             cinemachineVirtualCamera.transform.position = serverRoom.GameObject.transform.position + new Vector3(0, 5, -15);
 
             serverRoom.Interaction.RotateControl(true);
+            
         }
     }
 }

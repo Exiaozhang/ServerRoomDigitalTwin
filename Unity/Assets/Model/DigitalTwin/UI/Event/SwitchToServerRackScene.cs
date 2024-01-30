@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace ETModel
 {
-    [Event(UIEventType.LobbyTOServerRackSceneLobby)]
-    public class LobbyToServrRackSceneLobby: AEvent<ServerRack>
+    [Event(UIEventType.SwitchToServerRackScene)]
+    public class SwitchToServerRackScene: AEvent<ServerRack>
     {
         public override async void Run(ServerRack serverRack)
         {

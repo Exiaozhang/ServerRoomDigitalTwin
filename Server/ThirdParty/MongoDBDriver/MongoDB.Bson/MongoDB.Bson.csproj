@@ -2,10 +2,11 @@
 
   <PropertyGroup>
     <LangVersion>7.3</LangVersion>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <WarningsAsErrors />
     <CodeAnalysisRuleSet>../MongoDBLegacy.ruleset</CodeAnalysisRuleSet>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <NuGetAuditMode>all</NuGetAuditMode>
   </PropertyGroup>
 
   <PropertyGroup>

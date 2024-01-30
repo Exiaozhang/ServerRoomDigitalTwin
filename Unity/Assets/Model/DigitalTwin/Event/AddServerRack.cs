@@ -16,7 +16,7 @@ namespace ETModel.Event
             ServerRack serverRack = serverRackComponent.AddServerRack(serverRackConfig);
 
             //给机架订阅事件，点击切换场景
-            serverRack.Interaction.onPointerClikEvent += () => { Game.EventSystem.Run(UIEventType.LobbyTOServerRackSceneLobby, serverRack); };
+            serverRack.Interaction.onPointerClikEvent += () => { Game.EventSystem.Run(UIEventType.SwitchToServerRackScene, serverRack); };
 
             ServerRoom.Instance.Add(serverRack.GameObject, serverRack.Position);
         }
