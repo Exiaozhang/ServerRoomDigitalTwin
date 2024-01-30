@@ -14,7 +14,7 @@ namespace ETModel
 
             using (SceneChangeComponent sceneChangeComponent = ETModel.Game.Scene.AddComponent<SceneChangeComponent>())
             {
-                await sceneChangeComponent.ChangeSceneAsync(SceneType.ServerRackScene);
+                await sceneChangeComponent.ChangeSceneAsync(SceneType.DigitTwinInit);
             }
 
             //加载资源中的Room的预制体

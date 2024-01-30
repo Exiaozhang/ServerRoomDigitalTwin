@@ -14,6 +14,7 @@ namespace ETModel
         public const string RobotClient = "RobotClient";
         public const string Realm = "Realm";
         public const String ServerRackScene = "ServerRackScene";
+        public const String DigitTwinInit = "DigitTwinInit";
     }
 
     public sealed class Scene: Entity

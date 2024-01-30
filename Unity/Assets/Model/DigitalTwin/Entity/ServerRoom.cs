@@ -36,5 +36,10 @@ namespace ETModel
             obj.transform.rotation = gameObject.transform.rotation;
             obj.GetComponent<Transform>().parent = this.GameObject.transform;
         }
+
+        public override void Dispose()
+        {
+            base.Dispose();
+        }
     }
 }

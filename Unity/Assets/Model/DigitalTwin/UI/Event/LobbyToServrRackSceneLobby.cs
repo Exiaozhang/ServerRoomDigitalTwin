@@ -10,6 +10,7 @@ namespace ETModel
     {
         public override async void Run(ServerRack serverRack)
         {
+            
             // 加载场景资源
             // 加载场景会清空Gameobject
             ETModel.Game.Scene.GetComponent<ResourcesComponent>().LoadBundle("serverrackscene.unity3d");

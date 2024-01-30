@@ -137,6 +137,7 @@ namespace ETHotfix
 				if (this.GameObject != null)
 				{
 					UnityEngine.Object.Destroy(this.GameObject);
+					ETModel.Log.Msg(this.GameObject.name);
 				}
 #endif
 			}
