@@ -1,9 +1,6 @@
 ﻿using System.Threading;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Security.Policy;
 
 namespace ETModel
 {
@@ -32,7 +29,7 @@ namespace ETModel
                 Game.Scene.AddComponent<UnitComponent>();
                 Game.Scene.AddComponent<UIComponent>();
                 Game.Scene.AddComponent<VirtualCameraComponent>();
-                
+
                 // 下载ab包
                 await BundleHelper.DownloadBundle();
 
@@ -45,10 +42,9 @@ namespace ETModel
                 Game.Scene.GetComponent<ResourcesComponent>().UnloadBundle("config.unity3d");
                 Game.Scene.AddComponent<OpcodeTypeComponent>();
                 Game.Scene.AddComponent<MessageDispatcherComponent>();
-                
 
                 Game.Hotfix.GotoHotfix();
-                
+
                 //TODO 本项目的UI应该由雷火UX创建
 
                 //创建初始化场景(UI和Map)

@@ -137,6 +137,8 @@
     <Compile Include="Assets\Model\DigitalTwin\Event\AddServer.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Event\AddServerRack.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Event\EventType.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\Scripts\HighlightableObject.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\Scripts\HighlightingEffect.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerComponentSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackComponentSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackLobbyComponentSystem.cs" />

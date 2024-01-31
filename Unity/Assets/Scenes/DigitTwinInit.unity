@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8c7c3fd24a1ac184ea308308338a1009,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -336,6 +337,7 @@ GameObject:
   - component: {fileID: 1324526540}
   - component: {fileID: 1324526543}
   - component: {fileID: 1324526544}
+  - component: {fileID: 1324526545}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: MainCamera
@@ -458,6 +460,24 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1324526545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324526539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c11fc24807cfa642acf94cc7d4d4a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stencilZBufferDepth: 0
+  _downsampleFactor: 2
+  iterations: 3
+  blurMinSpread: 1
+  blurSpread: 0
+  _blurIntensity: 0.28
 --- !u!1 &1444312411
 GameObject:
   m_ObjectHideFlags: 0

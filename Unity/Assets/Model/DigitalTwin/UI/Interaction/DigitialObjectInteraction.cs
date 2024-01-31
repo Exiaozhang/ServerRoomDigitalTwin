@@ -10,25 +10,70 @@ namespace ETModel
     public class DigitialObjectInteraction: MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         public event Action onPointerClikEvent;
+        public event Action onPointerEnterEvent;
+        public event Action onPointerExitEvent;
+
+        /// <summary>
+        /// 高亮Gameobejct控制
+        /// </summary>
+        [NonSerialized]
+        public HighlightableObject HighlightableObject;
+
         private Boolean rotate = false;
-        
+
         //旋转速度
         public Single speed = 800;
 
+        public Color OutLineColor = Color.yellow;
+
+        public void Awake()
+        {
+            HighlightableObject hlObj = this.gameObject.GetComponent<HighlightableObject>();
+
+            if (hlObj != null)
+            {
+                HighlightableObject = hlObj;
+                return;
+            }
+
+            HighlightableObject = this.gameObject.AddComponent<HighlightableObject>();
+        }
+
         public void ShowOutlineGlow()
         {
-            //TODO 完成外发光效果
-            Log.Msg("外发光");
+            HighlightableObject.ConstantOn(this.OutLineColor);
+        }
+
+        public void OffShowOutlineGlow()
+        {
+            HighlightableObject.ConstantOff();
+        }
+
+        /// <summary>
+        /// 是否允许物体进行高亮交互
+        /// </summary>
+        /// <param name="allow"></param>
+        public void HighLightInteraction(Boolean allow)
+        {
+            if (allow)
+            {
+                onPointerEnterEvent += this.ShowOutlineGlow;
+                onPointerExitEvent += this.OffShowOutlineGlow;
+                return;
+            }
+
+            onPointerEnterEvent -= this.ShowOutlineGlow;
+            onPointerExitEvent -= this.OffShowOutlineGlow;
         }
 
         public virtual void OnPointerEnter(PointerEventData eventData)
         {
-            this.ShowOutlineGlow();
-     
+            onPointerEnterEvent?.Invoke();
         }
 
         public virtual void OnPointerExit(PointerEventData eventData)
         {
+            onPointerExitEvent?.Invoke();
         }
 
         public virtual void OnPointerClick(PointerEventData eventData)

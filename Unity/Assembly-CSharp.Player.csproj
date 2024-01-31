@@ -41,6 +41,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\HighlightingSystemDemo\Scripts\CameraTargeting.cs" />
+    <Compile Include="Assets\HighlightingSystemDemo\Scripts\CompoundObjectController.cs" />
+    <Compile Include="Assets\HighlightingSystemDemo\Scripts\DelayedDestroyController.cs" />
+    <Compile Include="Assets\HighlightingSystemDemo\Scripts\FlashingController.cs" />
+    <Compile Include="Assets\HighlightingSystemDemo\Scripts\HighlightingController.cs" />
+    <Compile Include="Assets\HighlightingSystemDemo\Scripts\OccluderController.cs" />
+    <Compile Include="Assets\HighlightingSystemDemo\Scripts\RotationController.cs" />
+    <Compile Include="Assets\HighlightingSystemDemo\Scripts\SceneLoader.cs" />
+    <Compile Include="Assets\HighlightingSystemDemo\Scripts\SpectrumController.cs" />
+    <Compile Include="Assets\HighlightingSystemDemo\Scripts\StaticOccluderController.cs" />
+    <Compile Include="Assets\HighlightingSystemDemo\Scripts\WallMovementController.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\3rdPersonWithAimMode\ActivateOnKeypress.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerLookAt.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerMovement.cs" />
@@ -63,6 +74,7 @@
     <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\PlayerMoveOnSphere.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\PlayerMovePhysics.cs" />
     <Compile Include="Assets\Samples\Cinemachine\2.6.17\Cinemachine Example Scenes\Shared\Scripts\SpawnInCircle.cs" />
+    <Compile Include="Assets\Test\HighLigthingTest.cs" />
     <Compile Include="Assets\Test\TestCameraManager.cs" />
     <Compile Include="Assets\Test\TestInteration.cs" />
     <Reference Include="UnityEngine">
