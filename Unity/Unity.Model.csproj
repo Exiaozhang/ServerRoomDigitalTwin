@@ -137,8 +137,6 @@
     <Compile Include="Assets\Model\DigitalTwin\Event\AddServer.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Event\AddServerRack.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Event\EventType.cs" />
-    <Compile Include="Assets\Model\DigitalTwin\Scripts\HighlightableObject.cs" />
-    <Compile Include="Assets\Model\DigitalTwin\Scripts\HighlightingEffect.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerComponentSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackComponentSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackLobbyComponentSystem.cs" />
@@ -156,6 +154,8 @@
     <Compile Include="Assets\Model\DigitalTwin\UI\Factory\ServerRackLobbyFactory.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Factory\TooltipFactory.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\DigitialObjectInteraction.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\HightLighting\HighlightableObject.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\HightLighting\HighlightingEffect.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\ServerInteraction.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\ServerRackInteraction.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Interaction\ServerRoomInteraction.cs" />

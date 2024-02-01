@@ -17,15 +17,11 @@ namespace ETModel
             this.servers = new Dictionary<Int32, Server>();
         }
 
-        public Server AddServer(ServerConfig serverConfig)
+        public void AddServer(Int32 id, Server server)
         {
             //加载预制体资源
-            GameObject serverObj = Resources.Load<GameObject>("DigitTwin/Server");
-            Server server = ComponentFactory.CreateWithParent<Server, GameObject, ServerConfig>(this, serverObj, serverConfig);
-            this.servers.Add(server.Id, server);
-            return server;
+            servers.Add(id, server);
         }
-
 
         public List<Server> GetAll()
         {

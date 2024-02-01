@@ -12,14 +12,12 @@ namespace ETModel.Event
     {
         public override void Run(ServerRackConfig serverRackConfig)
         {
-            ServerRackComponent serverRackComponent = ServerRoom.Instance.GetComponent<ServerRackComponent>();
-            ServerRack serverRack = serverRackComponent.AddServerRack(serverRackConfig);
+            //向机房中添加服务器
+            ServerRack serverRack = ServerRoom.Instance.AddServerRack(serverRackConfig);
 
             //给机架订阅事件，点击切换场景
             serverRack.Interaction.onPointerClikEvent += () => { Game.EventSystem.Run(UIEventType.SwitchToServerRackScene, serverRack); };
-            serverRack.Interaction.HighLightInteraction(true);
-
-            ServerRoom.Instance.Add(serverRack.GameObject, serverRack.Position);
+            serverRack.Interaction.HighLighting = true;
         }
     }
 }

@@ -10,7 +10,6 @@ namespace ETModel
     {
         public override async void Run(ServerRack serverRack)
         {
-            
             // 加载场景资源
             // 加载场景会清空Gameobject
             ETModel.Game.Scene.GetComponent<ResourcesComponent>().LoadBundle("serverrackscene.unity3d");
@@ -32,10 +31,11 @@ namespace ETModel
 
             foreach (Server server in servers)
             {
-                newServerRack.AddServer(new ServerConfig()
+                Server addServer = newServerRack.AddServer(new ServerConfig()
                 {
                     Id = server.Id, Name = server.Name, Position = server.Position, RackId = server.RackId
                 });
+                addServer.Interaction.HighLighting = true;
             }
 
             serverRack.Dispose();

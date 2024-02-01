@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 namespace ETModel
 {
@@ -17,14 +18,19 @@ namespace ETModel
         /// 高亮Gameobejct控制
         /// </summary>
         [NonSerialized]
-        public HighlightableObject HighlightableObject;
+        private HighlightableObject HighlightableObject;
 
         private Boolean rotate = false;
 
         //旋转速度
         public Single speed = 800;
 
-        public Color OutLineColor = Color.yellow;
+        //控制是否启用高亮
+        [FormerlySerializedAs("Highting")]
+        public Boolean HighLighting = false;
+
+        [FormerlySerializedAs("OutLineColor")]
+        public Color HighLightingColor = Color.blue;
 
         public void Awake()
         {
@@ -41,7 +47,7 @@ namespace ETModel
 
         public void ShowOutlineGlow()
         {
-            HighlightableObject.ConstantOn(this.OutLineColor);
+            HighlightableObject.ConstantOn(this.HighLightingColor);
         }
 
         public void OffShowOutlineGlow()
@@ -49,30 +55,17 @@ namespace ETModel
             HighlightableObject.ConstantOff();
         }
 
-        /// <summary>
-        /// 是否允许物体进行高亮交互
-        /// </summary>
-        /// <param name="allow"></param>
-        public void HighLightInteraction(Boolean allow)
-        {
-            if (allow)
-            {
-                onPointerEnterEvent += this.ShowOutlineGlow;
-                onPointerExitEvent += this.OffShowOutlineGlow;
-                return;
-            }
-
-            onPointerEnterEvent -= this.ShowOutlineGlow;
-            onPointerExitEvent -= this.OffShowOutlineGlow;
-        }
-
         public virtual void OnPointerEnter(PointerEventData eventData)
         {
+            if (this.HighLighting)
+                this.ShowOutlineGlow();
             onPointerEnterEvent?.Invoke();
         }
 
         public virtual void OnPointerExit(PointerEventData eventData)
         {
+            if (this.HighLighting)
+                this.OffShowOutlineGlow();
             onPointerExitEvent?.Invoke();
         }
 

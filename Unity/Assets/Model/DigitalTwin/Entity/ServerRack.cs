@@ -50,20 +50,33 @@ namespace ETModel
         }
 
         /// <summary>
+        /// 设置服务器在机架中的位置
+        /// </summary>
+        private void SetPosition(Server server)
+        {
+            ReferenceCollector referenceCollector = this.GameObject.GetComponent<ReferenceCollector>();
+            Transform transform = referenceCollector.Get<GameObject>(server.Position.ToString()).GetComponent<Transform>();
+            server.GameObject.transform.position = transform.position;
+            server.GameObject.transform.rotation = transform.rotation;
+            server.GameObject.transform.parent = this.GameObject.transform;
+        }
+
+        /// <summary>
         /// 在场景中将Server的Gameobject添加到ServerRack上
         /// </summary>
-        public void AddServer(ServerConfig serverConfig)
+        public Server AddServer(ServerConfig serverConfig)
         {
+            GameObject serverObj = Resources.Load<GameObject>("DigitTwin/Server");
+            Server server = ComponentFactory.CreateWithParent<Server, GameObject, ServerConfig>(this, serverObj, serverConfig);
+
             //加载到serversComponent种管理
             ServerComponent serverComponent = this.GetComponent<ServerComponent>();
-            Server addServer = serverComponent.AddServer(serverConfig);
+            serverComponent.AddServer(server.Id, server);
 
-            ReferenceCollector referenceCollector = this.GameObject.GetComponent<ReferenceCollector>();
-            Transform transform = referenceCollector.Get<GameObject>(addServer.Position.ToString()).GetComponent<Transform>();
-            addServer.GameObject.transform.position = transform.position;
-            addServer.GameObject.transform.rotation = transform.rotation;
-            addServer.GameObject.transform.parent = this.GameObject.transform;
+            //设置位置
+            this.SetPosition(server);
+
+            return server;
         }
-        
     }
 }

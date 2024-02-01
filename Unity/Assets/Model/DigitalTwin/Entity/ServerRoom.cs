@@ -26,7 +26,7 @@ namespace ETModel
         /// </summary>
         /// <param name="obj">Gameobject</param>
         /// <param name="position">位置</param>
-        public void Add(GameObject obj, Int32 position)
+        private void SetPosition(GameObject obj, Int32 position)
         {
             if (obj == null)
                 return;
@@ -35,6 +35,21 @@ namespace ETModel
             obj.transform.position = gameObject.transform.position;
             obj.transform.rotation = gameObject.transform.rotation;
             obj.GetComponent<Transform>().parent = this.GameObject.transform;
+        }
+
+        /// <summary>
+        /// 向机房中添加机架
+        /// </summary>
+        /// <param name="serverRackConfig"></param>
+        /// <returns></returns>
+        public ServerRack AddServerRack(ServerRackConfig serverRackConfig)
+        {
+            GameObject serverRackObj = Resources.Load<GameObject>("DigitTwin/ServerRack");
+            ServerRack serverRack =
+                    ComponentFactory.CreateWithParent<ServerRack, GameObject, ServerRackConfig>(this, serverRackObj, serverRackConfig);
+            this.GetComponent<ServerRackComponent>().AddServerRack(serverRack.Id, serverRack);
+            this.SetPosition(serverRack.GameObject, serverRack.Position);
+            return serverRack;
         }
 
         public override void Dispose()

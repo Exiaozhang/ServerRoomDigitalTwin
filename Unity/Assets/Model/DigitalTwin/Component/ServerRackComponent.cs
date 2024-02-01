@@ -17,27 +17,6 @@ namespace ETModel
         }
 
         /// <summary>
-        /// 添加机架
-        /// </summary>
-        /// <param name="id">机架的id</param>
-        /// <param name="position">机架的position</param>
-        /// <returns></returns>
-        public ServerRack AddServerRack(Int32 id, Int32 position, String name)
-        {
-            ServerRackConfig serverRackConfig = new ServerRackConfig() { Id = id, Position = position, Name = name };
-            return AddServerRack(serverRackConfig);
-        }
-
-        public ServerRack AddServerRack(ServerRackConfig serverRackConfig)
-        {
-            GameObject serverRackObj = Resources.Load<GameObject>("DigitTwin/ServerRack");
-            ServerRack serverRack =
-                    ComponentFactory.CreateWithParent<ServerRack, GameObject, ServerRackConfig>(this, serverRackObj, serverRackConfig);
-            serverRacks.Add(serverRack.Id, serverRack);
-            return serverRack;
-        }
-
-        /// <summary>
         /// 找到对应id的机架
         /// </summary>
         /// <param name="id"></param>
@@ -51,6 +30,16 @@ namespace ETModel
             }
 
             return null;
+        }
+        
+        /// <summary>
+        /// 添加机架到ServerRackComponent中
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="serverRack"></param>
+        public void AddServerRack(Int32 id, ServerRack serverRack)
+        {
+            serverRacks.Add(id, serverRack);
         }
     }
 }
