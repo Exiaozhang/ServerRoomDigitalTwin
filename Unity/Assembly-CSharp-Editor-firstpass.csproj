@@ -753,6 +753,18 @@
       <Project>{52181ede-bd02-e7e0-4630-061549282896}</Project>
       <Name>com.unity.multiplayer-hlapi.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="XCharts.Runtime.csproj">
+      <Project>{d2f6baaa-612e-beb5-a513-e2c2ab899c3e}</Project>
+      <Name>XCharts.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="XCharts.Editor.csproj">
+      <Project>{20d2c2aa-4591-58de-756a-908d0605824b}</Project>
+      <Name>XCharts.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="XCharts.Examples.csproj">
+      <Project>{f612fc64-f9d4-07cf-c873-48aed84f5fd4}</Project>
+      <Name>XCharts.Examples</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
