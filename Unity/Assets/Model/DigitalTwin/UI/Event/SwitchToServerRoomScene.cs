@@ -17,6 +17,10 @@ namespace ETModel
                 await sceneChangeComponent.ChangeSceneAsync(SceneType.ServerRoomScene);
             }
 
+            //加载资源中的ServerRoomUI
+            ServerRoomLobbyFactory.Create(DigitialTwinUIType.ServerRoomLobby);
+            Log.Msg("Hello World");
+
             //加载资源中的Room的预制体
             GameObject roomObj = Resources.Load<GameObject>("DigitTwin/Room");
             ServerRoom serverRoom = ComponentFactory.CreateWithParent<ServerRoom, GameObject>(Game.Scene, roomObj);
@@ -53,7 +57,6 @@ namespace ETModel
             cinemachineVirtualCamera.transform.position = serverRoom.GameObject.transform.position + new Vector3(0, 5, -15);
 
             serverRoom.Interaction.RotateControl(true);
-            
         }
     }
 }

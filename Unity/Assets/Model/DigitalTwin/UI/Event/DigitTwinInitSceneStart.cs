@@ -12,53 +12,12 @@ namespace ETModel
         public override async void Run()
         {
             //创建加载主场景大厅UI
-            UI ui = LobbyFactory.Create(DigitialTwinUIType.Lobby);
+            UI ui = LobbyFactory.Create(DigitialTwinUIType.MainLobby);
             //将UI加载到Scene中的UIComponent进行管理
             Game.Scene.GetComponent<UIComponent>().Add(ui);
 
             //切换到机房的场景
-            ETModel.Game.Scene.GetComponent<ResourcesComponent>().LoadBundle("serverroomscene.unity3d");
-            using (SceneChangeComponent sceneChangeComponent = ETModel.Game.Scene.AddComponent<SceneChangeComponent>())
-            {
-                await sceneChangeComponent.ChangeSceneAsync(SceneType.ServerRoomScene);
-            }
-
-            //加载资源中的Room的预制体
-            GameObject roomObj = Resources.Load<GameObject>("DigitTwin/Room");
-            ServerRoom serverRoom = ComponentFactory.Create<ServerRoom, GameObject>(roomObj);
-
-            //接收服务器传来的ServerRack配置信息(这里先用AssetBundleConfig代替 还没有清楚需求)
-            ACategory serverRackConfigCategory = Game.Scene.GetComponent<ConfigComponent>().GetCategory(typeof (ServerRackConfig));
-            IConfig[] serverRackConfigs = serverRackConfigCategory.GetAll();
-
-            foreach (var config in serverRackConfigs)
-            {
-                var serverRackConfig = (ServerRackConfig)config;
-                //发布事件添加机架
-                Game.EventSystem.Run(EventType.AddServerRack, serverRackConfig);
-            }
-
-            //接收服务器传来的Server配置信息(这里先用AssetBundleConfig代替)
-            ACategory serverConfigCategory = Game.Scene.GetComponent<ConfigComponent>().GetCategory(typeof (ServerConfig));
-            IConfig[] serverConfigs = serverConfigCategory.GetAll();
-
-            foreach (IConfig config in serverConfigs)
-            {
-                var serverConfig = (ServerConfig)config;
-                Game.EventSystem.Run(EventType.AddServer, serverConfig);
-            }
-
-            //将虚拟摄像头对准ServerRoom
-            CinemachineVirtualCamera cinemachineVirtualCamera = Game.Scene.GetComponent<VirtualCameraComponent>().GetMaxPriority();
-            cinemachineVirtualCamera.LookAt = serverRoom.GameObject.transform;
-            cinemachineVirtualCamera.Follow = serverRoom.GameObject.transform;
-            UnityEngine.Object.Destroy(cinemachineVirtualCamera.GetCinemachineComponent(CinemachineCore.Stage.Body));
-            UnityEngine.Object.Destroy(cinemachineVirtualCamera.GetCinemachineComponent(CinemachineCore.Stage.Aim));
-
-            cinemachineVirtualCamera.AddCinemachineComponent<CinemachineComposer>();
-            cinemachineVirtualCamera.transform.position = serverRoom.GameObject.transform.position + new Vector3(0, 5, -15);
-
-            serverRoom.Interaction.RotateControl(true);
+            Game.EventSystem.Run(UIEventType.SwitchToServerRoomScene);
         }
     }
 }

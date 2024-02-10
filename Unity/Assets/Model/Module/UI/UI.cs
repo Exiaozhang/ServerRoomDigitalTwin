@@ -21,6 +21,11 @@ namespace ETModel
 
 		public Dictionary<string, UI> children = new Dictionary<string, UI>();
 		
+		/// <summary>
+		/// UI的名称name和对应的游戏物体Gameobject
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="gameObject"></param>
 		public void Awake(string name, GameObject gameObject)
 		{
 			this.children.Clear();
