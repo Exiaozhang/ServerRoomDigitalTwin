@@ -114,6 +114,7 @@
     <None Include="Library\PackageCache\com.unity.textmeshpro@2.1.4\Editor Resources\Shaders\TMP_Properties.cginc" />
     <None Include="Library\PackageCache\com.unity.cinemachine@2.6.17\license.txt" />
     <None Include="Assets\Res\Config\ServerRackConfig.txt" />
+    <None Include="Assets\Test-data\json-test123.txt" />
     <None Include="Library\PackageCache\com.unity.modules.terrainphysics@1.0.0\package.json" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

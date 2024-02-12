@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class JSONEventWriter : IEventWriter
+public class JSONEventWriter: IEventWriter
 {
     private readonly bool createFileIfNonFound;
     private readonly string path;
