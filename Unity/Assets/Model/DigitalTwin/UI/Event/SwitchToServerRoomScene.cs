@@ -19,7 +19,6 @@ namespace ETModel
 
             //加载资源中的ServerRoomUI
             ServerRoomLobbyFactory.Create(DigitialTwinUIType.ServerRoomLobby);
-            Log.Msg("Hello World");
 
             //加载资源中的Room的预制体
             GameObject roomObj = Resources.Load<GameObject>("DigitTwin/Room");

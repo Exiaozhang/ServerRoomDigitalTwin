@@ -19,7 +19,7 @@ public class JSONEventReader: IEventReader
         return hasFileToRead;
     }
 
-    List<EventData> IEventReader.ReadEvents()
+    public List<EventData> ReadEvents()
     {
         Dictionary<string, EventData> events = new Dictionary<string, EventData>();
 
@@ -66,6 +66,7 @@ public class JSONEventReader: IEventReader
 
     private bool Startup()
     {
+        //判断读取的文件是否存在
         if (File.Exists(path))
         {
             return true;

@@ -15,6 +15,10 @@ namespace ETModel.Event
             //向机房中添加服务器
             ServerRack serverRack = ServerRoom.Instance.AddServerRack(serverRackConfig);
 
+            //把温度写入到heatmap中的配置文件中
+            //这块的Heatmap有问题，只会叠加时间的数量，无法配置温度
+            //暂时的解决方法就是如果温度高则多次叠加
+                
             //给机架订阅事件，点击切换场景
             serverRack.Interaction.onPointerClikEvent += () => { Game.EventSystem.Run(UIEventType.SwitchToServerRackScene, serverRack); };
             serverRack.Interaction.HighLighting = true;

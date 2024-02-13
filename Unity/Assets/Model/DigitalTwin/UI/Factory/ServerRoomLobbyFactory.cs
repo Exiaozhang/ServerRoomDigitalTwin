@@ -13,8 +13,7 @@ namespace ETModel
             GameObject ServerRoomLobby = UnityEngine.Object.Instantiate(prefab);
 
             UI ui = ComponentFactory.Create<UI, String, GameObject>(type, ServerRoomLobby);
-            //ui.AddComponent<ServerRackLobbyComponent>();
-            
+            ui.AddComponent<ServerRoomLobbyComponent>();
 
             return ui;
         }

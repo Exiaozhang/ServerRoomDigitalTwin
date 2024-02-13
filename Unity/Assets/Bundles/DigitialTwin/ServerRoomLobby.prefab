@@ -7268,7 +7268,7 @@ GameObject:
   - component: {fileID: 5325793533088894769}
   - component: {fileID: 8540779980969406607}
   m_Layer: 5
-  m_Name: Button
+  m_Name: HumButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9700,6 +9700,7 @@ GameObject:
   - component: {fileID: 2907255023611717570}
   - component: {fileID: 4116519722970018464}
   - component: {fileID: 6600554735195106185}
+  - component: {fileID: 5325725789328254982}
   m_Layer: 5
   m_Name: ServerRoomLobby
   m_TagString: Untagged
@@ -9795,6 +9796,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5325725789328254982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981394550101769877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502d8cafd6a5a0447ab1db9a24cdcb10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+  - key: Basic
+    gameObject: {fileID: 4561354443744884526}
+  - key: Pue
+    gameObject: {fileID: 5245517377773217928}
+  - key: Resource
+    gameObject: {fileID: 2062553665363838331}
+  - key: Warning
+    gameObject: {fileID: 6905469784634201876}
+  - key: Monitoring
+    gameObject: {fileID: 1554581065525974109}
+  - key: Environment
+    gameObject: {fileID: 1791834009684405920}
+  - key: TemButton
+    gameObject: {fileID: 3014275163855408075}
+  - key: HumButton
+    gameObject: {fileID: 1492651693165517546}
+  - key: CapButton
+    gameObject: {fileID: 2827699953906455141}
 --- !u!1 &1988372194968644684
 GameObject:
   m_ObjectHideFlags: 0
@@ -12756,7 +12788,7 @@ GameObject:
   - component: {fileID: 5538355408782806374}
   - component: {fileID: 6494545805682245288}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CapButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13635,7 +13667,7 @@ GameObject:
   - component: {fileID: 8603539643932545783}
   - component: {fileID: 8394422786385780666}
   m_Layer: 5
-  m_Name: Button
+  m_Name: TemButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

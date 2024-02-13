@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DigitTwinInit.unity
+    path: Assets/Scenes/DigitTwin/DigitTwinInit.unity
     guid: 45c4cee10a498a1409003a06dbd5044a
   - enabled: 1
-    path: Assets/Scenes/ServerRackScene.unity
+    path: Assets/Scenes/DigitTwin/ServerRackScene.unity
     guid: c6def1e0bcc32304eb304b0baf487853
   - enabled: 1
-    path: Assets/Scenes/ServerRoomScene.unity
+    path: Assets/Scenes/DigitTwin/ServerRoomScene.unity
     guid: 7497fefa62051364dbb90ae25956cfe3
   m_configObjects: {}

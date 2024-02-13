@@ -125,6 +125,7 @@
     <Compile Include="Assets\Model\DigitalTwin\Component\ServerComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Component\ServerRackComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Component\ServerRackLobbyComponent.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\Component\ServerRoomLobbyComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Component\VirtualCameraComponent.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Config\ServerConfig.cs" />
     <Compile Include="Assets\Model\DigitalTwin\Config\ServerRackConfig.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackComponentSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackLobbyComponentSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRackSystem.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\System\ServerRoomLobbyComponentSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerRoomSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\ServerSystem.cs" />
     <Compile Include="Assets\Model\DigitalTwin\System\VirtualCameraComponentSystem.cs" />
