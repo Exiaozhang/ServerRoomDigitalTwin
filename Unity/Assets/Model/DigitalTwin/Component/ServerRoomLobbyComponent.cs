@@ -13,8 +13,8 @@ namespace ETModel
             ReferenceCollector referenceCollector = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
             referenceCollector.Get<GameObject>("TemButton").GetComponent<Button>().onClick.Add(() =>
             {
-                //TODO 温度场显示
-                
+                UnityEngine.MonoBehaviour.print("显示/关闭温度场");
+                Game.EventSystem.Run(UIEventType.SiwtchHeatMap);
             });
         }
     }

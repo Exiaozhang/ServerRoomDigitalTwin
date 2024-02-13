@@ -149,6 +149,7 @@
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\CancleHoverOnServer.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\DigitTwinInitSceneStart.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\HoverOnServer.cs" />
+    <Compile Include="Assets\Model\DigitalTwin\UI\Event\SwitchHeatMap.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\SwitchToServerRackScene.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\SwitchToServerRoomScene.cs" />
     <Compile Include="Assets\Model\DigitalTwin\UI\Event\UIEventType.cs" />

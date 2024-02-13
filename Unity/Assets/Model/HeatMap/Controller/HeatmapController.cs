@@ -80,6 +80,17 @@ public class HeatmapController: MonoBehaviour
     }
 
     /// <summary>
+    /// Close particle system
+    /// </summary>
+    public void CloseParticleSystem()
+    {
+        ParticleSystem particleSystem = this.gameObject.GetComponent<ParticleSystem>();
+        if (particleSystem != null)
+            UnityEngine.Object.Destroy(particleSystem);
+        particleSystemIsInitialized = false;
+    }
+
+    /// <summary>
     /// Resets heatmap color(color values) to default
     /// </summary>
     public void ResetHeatmap()
@@ -90,6 +101,7 @@ public class HeatmapController: MonoBehaviour
 
     /// <summary>
     /// Adds selected (in Editor window) events to heatmap and updates heatmap with their values
+    /// 为选择的事件生成温度场
     /// </summary>
     public void AddSelectedEventsToHeatmap()
     {

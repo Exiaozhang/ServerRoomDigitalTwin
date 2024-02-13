@@ -12,6 +12,8 @@ namespace ETModel
 
         public ServerRoomInteraction Interaction { get; protected set; }
 
+        public Boolean IsOpenHeatMap { get; protected set; }
+
         public override void Awake(GameObject gameObj)
         {
             base.Awake(gameObj);
@@ -55,6 +57,29 @@ namespace ETModel
         public override void Dispose()
         {
             base.Dispose();
+        }
+
+        /// <summary>
+        /// 控制温度场的开关
+        /// </summary>
+        public void SiwtchHeatMap()
+        {
+            HeatmapController heatmapController = this.GameObject.GetComponent<HeatmapController>();
+            if (!this.IsOpenHeatMap)
+            {
+                heatmapController.LoadEvents();
+                foreach (EventData eventData in heatmapController.events)
+                {
+                    eventData.ShouldEventBeVisualised = true;
+                }
+
+                heatmapController.InitializeParticleSystem();
+                heatmapController.AddSelectedEventsToHeatmap();
+                this.IsOpenHeatMap = true;
+                return;
+            }
+            heatmapController.CloseParticleSystem();
+            this.IsOpenHeatMap = false;
         }
     }
 }

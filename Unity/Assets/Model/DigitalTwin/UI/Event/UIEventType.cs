@@ -13,5 +13,7 @@ namespace ETModel
         public const String SwitchToServerRackScene = "SwitchToServerRackScene";
 
         public const String SwitchToServerRoomScene = "SwitchToServerRoomScene";
+        //控制温度场的开关
+        public const String SiwtchHeatMap = "SiwtchHeatMap";
     }
 }
