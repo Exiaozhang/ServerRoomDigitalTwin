@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -7,6 +8,9 @@ public class JSONEventWriter: IEventWriter
     private readonly bool createFileIfNonFound;
     private readonly string path;
 
+    /// <summary>
+    /// 是否可以写入到文件中
+    /// </summary>
     private readonly bool hasFileToWrite;
 
     public JSONEventWriter(string path, bool createFileIfNonFound)
@@ -20,6 +24,15 @@ public class JSONEventWriter: IEventWriter
     bool IEventWriter.IsWriterAvailable()
     {
         return hasFileToWrite;
+    }
+
+    /// <summary>
+    /// 清空事件文件中的内容
+    /// </summary>
+    public void ClearAllEvent()
+    {
+        FileStream fileStream = File.Create(this.path);
+        fileStream.Close();
     }
 
     bool IEventWriter.SaveEvent(BaseEvent baseEvent)

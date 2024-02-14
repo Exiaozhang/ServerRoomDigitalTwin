@@ -64,6 +64,8 @@ namespace ETModel
         /// </summary>
         public void SiwtchHeatMap()
         {
+            //TODO 锁定角度
+            
             HeatmapController heatmapController = this.GameObject.GetComponent<HeatmapController>();
             if (!this.IsOpenHeatMap)
             {

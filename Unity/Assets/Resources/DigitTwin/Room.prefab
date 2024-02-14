@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
     heightInParticles: 2
-    maxColoringDistance: 1
+    maxColoringDistance: 1.5
     ignoreYforColoring: 1
     gradient:
       serializedVersion: 2
@@ -153,7 +153,7 @@ MonoBehaviour:
       m_NumColorKeys: 3
       m_NumAlphaKeys: 2
     particleDistance: 0.5
-    colorMultiplier: 0.5
+    colorMultiplier: 1.0
     particleSize: 2
     colorCutoff: 0
     particleMaterial: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}

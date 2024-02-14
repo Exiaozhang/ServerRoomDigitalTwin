@@ -28,6 +28,10 @@ namespace ETModel
             ACategory serverRackConfigCategory = Game.Scene.GetComponent<ConfigComponent>().GetCategory(typeof (ServerRackConfig));
             IConfig[] serverRackConfigs = serverRackConfigCategory.GetAll();
 
+            //清空温度场
+            IEventWriter eventWriter = new JSONEventWriter("Assets/Test-data/json-test123.txt", true);
+            eventWriter.ClearAllEvent();
+            
             foreach (var config in serverRackConfigs)
             {
                 var serverRackConfig = (ServerRackConfig)config;

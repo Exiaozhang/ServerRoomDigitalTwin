@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 interface IEventWriter
@@ -19,4 +20,9 @@ interface IEventWriter
     /// </summary>
     /// <returns>true if writer is available for writing (valid configuration, initialized and etc), otherwise false</returns>
     bool IsWriterAvailable();
+    
+    /// <summary>
+    /// 清空文件中的所有的事件
+    /// </summary>
+    void  ClearAllEvent();
 }

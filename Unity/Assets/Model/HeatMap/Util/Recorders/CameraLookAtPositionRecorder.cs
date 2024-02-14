@@ -3,21 +3,23 @@ using UnityEngine;
 /// <summary>
 /// Example of event recorder, that tracks and saves camera look at position (Raycast) in specified interval.
 /// </summary>
-public class CameraLookAtPositionRecorder : AbstractEventIntervalRecorder
+public class CameraLookAtPositionRecorder: AbstractEventIntervalRecorder
 {
     [SerializeField]
     private Camera cameraToRecord = null;
+
     [SerializeField]
     private string dataPath;
+
     [SerializeField]
     private string eventName;
+
     [SerializeField]
     private bool createFileIfNonFound;
 
     private IEventWriter eventWriter;
 
     private readonly Vector3 centerOfScreen = new Vector3(0.5F, 0.5F, 0.5F);
-
 
     void Awake()
     {
