@@ -13,6 +13,9 @@ namespace ETModel
 	[Message(OuterOpcode.Actor_TransferResponse)]
 	public partial class Actor_TransferResponse : IActorLocationResponse {}
 
+	[Message(OuterOpcode.C2G_TestMessage)]
+	public partial class C2G_TestMessage : IRequest {}
+
 	[Message(OuterOpcode.C2G_EnterMap)]
 	public partial class C2G_EnterMap : IRequest {}
 
@@ -57,16 +60,17 @@ namespace ETModel
 		 public const ushort M2C_TestResponse = 102;
 		 public const ushort Actor_TransferRequest = 103;
 		 public const ushort Actor_TransferResponse = 104;
-		 public const ushort C2G_EnterMap = 105;
-		 public const ushort G2C_EnterMap = 106;
-		 public const ushort UnitInfo = 107;
-		 public const ushort M2C_CreateUnits = 108;
-		 public const ushort Frame_ClickMap = 109;
-		 public const ushort M2C_PathfindingResult = 110;
-		 public const ushort C2R_Ping = 111;
-		 public const ushort R2C_Ping = 112;
-		 public const ushort G2C_Test = 113;
-		 public const ushort C2M_Reload = 114;
-		 public const ushort M2C_Reload = 115;
+		 public const ushort C2G_TestMessage = 105;
+		 public const ushort C2G_EnterMap = 106;
+		 public const ushort G2C_EnterMap = 107;
+		 public const ushort UnitInfo = 108;
+		 public const ushort M2C_CreateUnits = 109;
+		 public const ushort Frame_ClickMap = 110;
+		 public const ushort M2C_PathfindingResult = 111;
+		 public const ushort C2R_Ping = 112;
+		 public const ushort R2C_Ping = 113;
+		 public const ushort G2C_Test = 114;
+		 public const ushort C2M_Reload = 115;
+		 public const ushort M2C_Reload = 116;
 	}
 }

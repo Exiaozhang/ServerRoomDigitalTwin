@@ -30,6 +30,12 @@ message Actor_TransferResponse // IActorLocationResponse
 	string Message = 92;
 }
 
+message C2G_TestMessage // IRequest
+{
+	int32 RpcId = 90;
+	string Message = 92;
+}
+
 message C2G_EnterMap // IRequest
 {
 	int32 RpcId = 90;

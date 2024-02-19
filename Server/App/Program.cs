@@ -44,6 +44,7 @@ namespace App
 				InnerConfig innerConfig = startConfig.GetComponent<InnerConfig>();
 				ClientConfig clientConfig = startConfig.GetComponent<ClientConfig>();
 				
+				
 				switch (startConfig.AppType)
 				{
 					case AppType.Manager:

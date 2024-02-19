@@ -14,6 +14,9 @@ namespace ETModel
             ServerRoom.Instance.Interaction.RotateControl(ServerRoom.Instance.IsOpenHeatMap);
             ServerRoom.Instance.GameObject.transform.localRotation = new Quaternion(0, 0, 0, 0);
             
+            Session session = Game.Scene.GetComponent<NetOuterComponent>().Create(GlobalConfigComponent.Instance.GlobalProto.Address); 
+            session.Call(new C2G_TestMessage(){Message = "Hello World"});
+            
             ServerRoom.Instance.SiwtchHeatMap();
         }
     }

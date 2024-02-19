@@ -369,6 +369,71 @@ namespace ETModel {
 
   }
 
+  public partial class C2G_TestMessage : pb::IMessage {
+    private static readonly pb::MessageParser<C2G_TestMessage> _parser = new pb::MessageParser<C2G_TestMessage>(() => (C2G_TestMessage)MessagePool.Instance.Fetch(typeof(C2G_TestMessage)));
+    public static pb::MessageParser<C2G_TestMessage> Parser { get { return _parser; } }
+
+    private int rpcId_;
+    public int RpcId {
+      get { return rpcId_; }
+      set {
+        rpcId_ = value;
+      }
+    }
+
+    private string message_ = "";
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (RpcId != 0) {
+        output.WriteRawTag(208, 5);
+        output.WriteInt32(RpcId);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(226, 5);
+        output.WriteString(Message);
+      }
+    }
+
+    public int CalculateSize() {
+      int size = 0;
+      if (RpcId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeInt32Size(RpcId);
+      }
+      if (Message.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      return size;
+    }
+
+    public void MergeFrom(pb::CodedInputStream input) {
+      rpcId_ = 0;
+      message_ = "";
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 720: {
+            RpcId = input.ReadInt32();
+            break;
+          }
+          case 738: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public partial class C2G_EnterMap : pb::IMessage {
     private static readonly pb::MessageParser<C2G_EnterMap> _parser = new pb::MessageParser<C2G_EnterMap>(() => (C2G_EnterMap)MessagePool.Instance.Fetch(typeof(C2G_EnterMap)));
     public static pb::MessageParser<C2G_EnterMap> Parser { get { return _parser; } }
