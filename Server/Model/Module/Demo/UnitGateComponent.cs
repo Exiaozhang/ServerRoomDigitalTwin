@@ -9,6 +9,9 @@
 		}
 	}
 
+	/// <summary>
+	/// 管理Gate服务器的ActorId
+	/// </summary>
 	public class UnitGateComponent : Component, ISerializeToEntity
 	{
 		public long GateSessionActorId;

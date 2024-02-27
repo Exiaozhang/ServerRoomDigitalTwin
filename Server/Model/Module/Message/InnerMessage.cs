@@ -369,6 +369,36 @@ namespace ETModel
 
 	}
 
+	[Message(InnerOpcode.G2M_SrdtCreateUnit)]
+	public partial class G2M_SrdtCreateUnit: IRequest
+	{
+		public int RpcId { get; set; }
+
+		public long PlayerId { get; set; }
+
+		public long GateSessionId { get; set; }
+
+	}
+
+	[Message(InnerOpcode.M2G_SrdtCreateUnit)]
+	public partial class M2G_SrdtCreateUnit: IResponse
+	{
+		public int RpcId { get; set; }
+
+		public int Error { get; set; }
+
+		public string Message { get; set; }
+
+// 自己的unit id
+// 自己的unit id
+		public long UnitId { get; set; }
+
+// 所有的unit
+// 所有的unit
+		public List<UnitInfo> Units = new List<UnitInfo>();
+
+	}
+
 	[Message(InnerOpcode.G2M_SessionDisconnect)]
 	public partial class G2M_SessionDisconnect: IActorLocationMessage
 	{

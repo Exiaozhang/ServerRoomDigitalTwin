@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace ETModel
 {
+    /// <summary>
+    /// 单位的路径
+    /// </summary>
     public class UnitPathComponent: Component
     {
         public Vector3 Target;

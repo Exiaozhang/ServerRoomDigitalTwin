@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace ETModel
 {
+    /// <summary>
+    /// 控制实体的移动
+    /// </summary>
     public class MoveComponent: Component
     {
         public Vector3 Target;
