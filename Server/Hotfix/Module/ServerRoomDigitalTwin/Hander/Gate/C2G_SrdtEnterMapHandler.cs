@@ -12,6 +12,7 @@ namespace ETHotfix
             Player player = session.GetComponent<SessionPlayerComponent>().Player;
             IPEndPoint mapAddress = StartConfigComponent.Instance.MapConfigs[0].GetComponent<InnerConfig>().IPEndPoint;
             Session mapSession = Game.Scene.GetComponent<NetInnerComponent>().Get(mapAddress);
+            
 
             M2G_SrdtCreateUnit createUnit =
                     (M2G_SrdtCreateUnit)await mapSession.Call(new G2M_SrdtCreateUnit() { PlayerId = player.Id, GateSessionId = session.InstanceId });

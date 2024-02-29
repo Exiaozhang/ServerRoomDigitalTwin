@@ -23,7 +23,7 @@ namespace ETHotfix
 
             session.AddComponent<SessionPlayerComponent>().Player = player;
             session.AddComponent<MailBoxComponent, String>(MailboxType.GateSession);
-
+            
             response.PlayerId = player.Id;
 
             reply();

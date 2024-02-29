@@ -301,12 +301,16 @@ namespace ETModel
 
 			MemoryStream stream = this.Stream;
 			
+			//将指针指向信息开始写入的内存地址
 			stream.Seek(Packet.MessageIndex, SeekOrigin.Begin);
 			stream.SetLength(Packet.MessageIndex);
+			//将message写入到stream
 			this.Network.MessagePacker.SerializeTo(message, stream);
+			//将指针指向opcode开始写入的内存地址
 			stream.Seek(0, SeekOrigin.Begin);
-			
+			//将opecode写入到opcodeBytes
 			opcodeBytes.WriteTo(0, opcode);
+			//将opcodeBytes写入到stream
 			Array.Copy(opcodeBytes, 0, stream.GetBuffer(), 0, opcodeBytes.Length);
 
 #if SERVER
@@ -324,6 +328,7 @@ namespace ETModel
 
 		public void Send(MemoryStream stream)
 		{
+			//使用channel发送
 			channel.Send(stream);
 		}
 	}

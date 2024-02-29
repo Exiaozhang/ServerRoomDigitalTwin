@@ -232,6 +232,7 @@ namespace ETModel
 
 		private void OnRecvComplete(object o)
 		{
+			//状态判断
 			if (this.socket == null)
 			{
 				return;
@@ -249,7 +250,8 @@ namespace ETModel
 				this.OnError(ErrorCode.ERR_PeerDisconnect);
 				return;
 			}
-
+			
+			//设置recvBuffer的索引为闲置buffer的起始位置(不知道对不对)
 			this.recvBuffer.LastIndex += e.BytesTransferred;
 			if (this.recvBuffer.LastIndex == this.recvBuffer.ChunkSize)
 			{

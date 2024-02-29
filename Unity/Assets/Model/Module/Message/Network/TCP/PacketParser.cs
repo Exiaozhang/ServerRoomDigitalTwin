@@ -33,7 +33,7 @@ namespace ETModel
 			this.buffer = buffer;
 			this.memoryStream = memoryStream;
 		}
-
+		
 		public bool Parse()
 		{
 			if (this.isOK)
