@@ -13,7 +13,7 @@ namespace ETModel
         public int ChunkSize = 8192;
 		
         /// <summary>
-        /// 可用队列
+        /// 已用队列
         /// </summary>
         private readonly Queue<byte[]> bufferQueue = new Queue<byte[]>();
 
@@ -22,8 +22,14 @@ namespace ETModel
         /// </summary>
         private readonly Queue<byte[]> bufferCache = new Queue<byte[]>();
 
+        /// <summary>
+        /// 已用Buffer队列,末尾Buffer的索引
+        /// </summary>
         public int LastIndex { get; set; }
         
+        /// <summary>
+        /// 已用Buffer队列,首位Buffer的索引
+        /// </summary>
         public int FirstIndex { get; set; }
         
 		/// <summary>
@@ -149,14 +155,21 @@ namespace ETModel
 		    }
 		}
 
-	    // 从CircularBuffer读到stream
+	    /// <summary>
+	    /// 从CircularBuffer读到stream
+	    /// </summary>
+	    /// <param name="stream"></param>
+	    /// <param name="count">需要读取的字节数</param>
+	    /// <exception cref="Exception"></exception>
 	    public void Read(Stream stream, int count)
 	    {
+		    //判断写入的字节数是否大于可用的bufferList
 		    if (count > this.Length)
 		    {
 			    throw new Exception($"bufferList length < count, {Length} {count}");
 		    }
 
+		    //一个一个Buffer的写入
 		    int alreadyCopyCount = 0;
 		    while (alreadyCopyCount < count)
 		    {
@@ -180,11 +193,13 @@ namespace ETModel
 	    // 从stream写入CircularBuffer
 	    public void Write(Stream stream)
 		{
+			//写入的字节数
 			int count = (int)(stream.Length - stream.Position);
 			
 			int alreadyCopyCount = 0;
 			while (alreadyCopyCount < count)
 			{
+				//空间不足添加新的Buffer
 				if (this.LastIndex == ChunkSize)
 				{
 					this.AddLast();
@@ -192,6 +207,7 @@ namespace ETModel
 				}
 
 				int n = count - alreadyCopyCount;
+				//判断剩余的字节数是否大于一个buffer的长度
 				if (ChunkSize - this.LastIndex > n)
 				{
 					stream.Read(this.lastBuffer, this.LastIndex, n);
@@ -200,6 +216,7 @@ namespace ETModel
 				}
 				else
 				{
+					//读取stream写入到已用Buffer的末尾
 					stream.Read(this.lastBuffer, this.LastIndex, ChunkSize - this.LastIndex);
 					alreadyCopyCount += ChunkSize - this.LastIndex;
 					this.LastIndex = ChunkSize;
