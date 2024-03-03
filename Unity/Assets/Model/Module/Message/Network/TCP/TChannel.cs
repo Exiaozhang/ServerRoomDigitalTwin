@@ -137,7 +137,7 @@ namespace ETModel
 					{
 						throw new Exception($"send packet too large: {stream.Length}");
 					}
-					//写入胞体长度
+					//写入包体长度
 					this.packetSizeCache.WriteTo(0, (ushort) stream.Length);
 					break;
 				default:
@@ -252,7 +252,7 @@ namespace ETModel
 				return;
 			}
 			
-			//设置recvBuffer的索引为闲置buffer的起始位置(不知道对不对)
+			//设置recvBuffer的的末尾索引
 			this.recvBuffer.LastIndex += e.BytesTransferred;
 			if (this.recvBuffer.LastIndex == this.recvBuffer.ChunkSize)
 			{
@@ -265,6 +265,7 @@ namespace ETModel
 			{
 				try
 				{
+					//解析收到的信息
 					if (!this.parser.Parse())
 					{
 						break;

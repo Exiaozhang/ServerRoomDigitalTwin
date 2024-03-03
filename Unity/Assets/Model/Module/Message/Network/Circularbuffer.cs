@@ -4,7 +4,7 @@ using System.IO;
 
 namespace ETModel
 {
-	//一个循环的Buffer
+	//一个循环的缓冲区
     public class CircularBuffer: Stream
     {
 	    /// <summary>
@@ -294,6 +294,7 @@ namespace ETModel
 	        int alreadyCopyCount = 0;
             while (alreadyCopyCount < count)
             {
+	            //不够加空间
                 if (this.LastIndex == ChunkSize)
                 {
                     this.AddLast();
