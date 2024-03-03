@@ -4,18 +4,31 @@ using System.IO;
 
 namespace ETModel
 {
+	//一个循环的Buffer
     public class CircularBuffer: Stream
     {
+	    /// <summary>
+	    /// 队列中每个BufferArray的长度
+	    /// </summary>
         public int ChunkSize = 8192;
-
+		
+        /// <summary>
+        /// 可用队列
+        /// </summary>
         private readonly Queue<byte[]> bufferQueue = new Queue<byte[]>();
 
+        /// <summary>
+        /// 缓存队列
+        /// </summary>
         private readonly Queue<byte[]> bufferCache = new Queue<byte[]>();
 
         public int LastIndex { get; set; }
-
+        
         public int FirstIndex { get; set; }
-		
+        
+		/// <summary>
+		/// 可用队列的末尾
+		/// </summary>
         private byte[] lastBuffer;
 
 	    public CircularBuffer()
@@ -23,6 +36,9 @@ namespace ETModel
 		    this.AddLast();
 	    }
 
+	    /// <summary>
+	    /// 返回可用队列申请的长度之和
+	    /// </summary>
         public override long Length
         {
             get
@@ -43,9 +59,14 @@ namespace ETModel
                 return c;
             }
         }
-
+        
+        /// <summary>
+        /// 添加一个Buffer到BufferQueue的末尾
+        /// 如果缓存对别有，就从缓存中取
+        /// </summary>
         public void AddLast()
         {
+	        
             byte[] buffer;
             if (this.bufferCache.Count > 0)
             {
@@ -58,12 +79,19 @@ namespace ETModel
             this.bufferQueue.Enqueue(buffer);
             this.lastBuffer = buffer;
         }
-
+		
+        /// <summary>
+        /// 将可用队列的首位放到缓存队列中
+        /// </summary>
         public void RemoveFirst()
         {
             this.bufferCache.Enqueue(bufferQueue.Dequeue());
         }
-
+		
+        /// <summary>
+        /// 取出可用队列的首位
+        /// 如果可用队列的数量为0,调用AddLast函数
+        /// </summary>
         public byte[] First
         {
             get
@@ -75,7 +103,11 @@ namespace ETModel
                 return this.bufferQueue.Peek();
             }
         }
-
+		
+        /// <summary>
+        /// 取出可用队列的末位
+        /// 如果可用队列的数量为0,调用AddLast函数
+        /// </summary>
         public byte[] Last
         {
             get
@@ -90,21 +122,26 @@ namespace ETModel
 
 		/// <summary>
 		/// 从CircularBuffer读到stream中
+		/// 将FirstBuffer写入到stream
 		/// </summary>
 		/// <param name="stream"></param>
 		/// <returns></returns>
 		public async ETTask ReadAsync(Stream stream)
 	    {
+		    //判断FirstBuffer的长度
 		    long buffLength = this.Length;
 			int sendSize = this.ChunkSize - this.FirstIndex;
 		    if (sendSize > buffLength)
 		    {
 			    sendSize = (int)buffLength;
 		    }
-			
+			//将FirstBuffer写入到流中
 		    await stream.WriteAsync(this.First, this.FirstIndex, sendSize);
 		    
+		    //移动索引到写入后的位置
 		    this.FirstIndex += sendSize;
+		    
+		    //判断First索引到的位置，是否写入完成
 		    if (this.FirstIndex == this.ChunkSize)
 		    {
 			    this.FirstIndex = 0;

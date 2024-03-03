@@ -137,6 +137,7 @@ namespace ETModel
 					{
 						throw new Exception($"send packet too large: {stream.Length}");
 					}
+					//写入胞体长度
 					this.packetSizeCache.WriteTo(0, (ushort) stream.Length);
 					break;
 				default:
@@ -310,14 +311,17 @@ namespace ETModel
 				return;
 			}
 
+			//设置发送状态
 			this.isSending = true;
 
+			//判断发送的buffer的长度
 			int sendSize = this.sendBuffer.ChunkSize - this.sendBuffer.FirstIndex;
 			if (sendSize > this.sendBuffer.Length)
 			{
 				sendSize = (int)this.sendBuffer.Length;
 			}
-
+			
+			//Socket异步发送
 			this.SendAsync(this.sendBuffer.First, this.sendBuffer.FirstIndex, sendSize);
 		}
 
@@ -325,12 +329,14 @@ namespace ETModel
 		{
 			try
 			{
+				//设置SocketArg的Buffer
 				this.outArgs.SetBuffer(buffer, offset, count);
 			}
 			catch (Exception e)
 			{
 				throw new Exception($"socket set buffer error: {buffer.Length}, {offset}, {count}", e);
 			}
+			//Socket异步发送
 			if (this.socket.SendAsync(this.outArgs))
 			{
 				return;
@@ -345,26 +351,33 @@ namespace ETModel
 				return;
 			}
 			SocketAsyncEventArgs e = (SocketAsyncEventArgs) o;
-
+			
+			//判断异步Socket的状态
 			if (e.SocketError != SocketError.Success)
 			{
 				this.OnError((int)e.SocketError);
 				return;
 			}
 			
+			//通过传输完成的Bytes，判断是否断开连接
 			if (e.BytesTransferred == 0)
 			{
 				this.OnError(ErrorCode.ERR_PeerDisconnect);
 				return;
 			}
 			
+			//重新设置Offest,指向未被发送的Buffer
 			this.sendBuffer.FirstIndex += e.BytesTransferred;
+			//如果重新指向的Offest是末尾,则发送完毕
 			if (this.sendBuffer.FirstIndex == this.sendBuffer.ChunkSize)
 			{
+				//offest重新指向0
 				this.sendBuffer.FirstIndex = 0;
+				//移除First的Buffer
 				this.sendBuffer.RemoveFirst();
 			}
 			
+			//重新发送
 			this.StartSend();
 		}
 	}
