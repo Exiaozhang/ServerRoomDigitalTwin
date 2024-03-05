@@ -97,7 +97,7 @@ namespace ETModel
         /// <summary>
         /// 取出可用队列的首位
         /// 如果可用队列的数量为0,调用AddLast函数
-        /// </summary>
+        /// </summary>C
         public byte[] First
         {
             get
